@@ -1,20 +1,30 @@
-import React from 'react';
+
 import './App.css';
-import Navbar from './components/Navbar';
+// import Input from './Components/Input';
+// import Table from './Components/Table';
+// import DamageInput from './Components/DamageInput';
+// import DamageTable from './Components/DamageTable';
+// import RoadsInput from './Components/RoadsInput';
+// import RoadsTable from './Components/RoadsTable';
+import Sidebar from './Components/Sidebar';
+import Deaths from './pages/Deaths';
+import Injuries from './pages/Injuries';
+import DamagedRoads from './pages/DamagedRoads';
+import DamagedInfrastructure from './pages/DamagedInfrastructure'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Reports from './pages/Reports';
-import Products from './pages/Products';
+import InputForm from './Components/InputForm';
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Sidebar />
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/Reports' element={<Reports/>} />
-          <Route path='/Products' element={<Products/>} />
+          <Route path = "/" element = {<InputForm/>}/>
+          <Route path='/deaths' element={<Deaths/>} />
+          <Route path='/injuries' element={<Injuries />} />
+          <Route path='/damagedinfrastructure' element={<DamagedInfrastructure />} />
+          <Route path='/damagedroads' element={<DamagedRoads />} />
         </Routes>
       </Router>
     </>
